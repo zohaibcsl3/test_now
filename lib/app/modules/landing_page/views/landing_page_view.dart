@@ -49,14 +49,17 @@ class LandingPageView extends GetView<LandingPageController> {
                   leadingIcon: Assets.svgDriving,
                   title: "Student Account",
                   onTap: () {
-                    Get.toNamed(Routes.ABOUT_YOU_INSTRUCTOR);
+                    Get.toNamed(Routes.ABOUT_YOU_STUDENT);
                   },
                 ),
                 SizedBox(height: 16.0),
                 _buildCustomButton(
                   title: "Instructor Account",
                   leadingIcon: Assets.svgHatIcon,
-                ),
+
+                  onTap: () {
+                    Get.toNamed(Routes.ABOUT_YOU_INSTRUCTOR);
+                  },),
               ],
             ),
           ),

@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:test_now/helper/UI_widgets/custom_back_app_bar.dart';
+import 'package:test_now/helper/UI_widgets/common_extensions.dart';
+import 'package:test_now/helper/UI_widgets/custom_button.dart';
+import 'package:test_now/helper/UI_widgets/custom_textfield_title.dart';
 
 import '../../../../generated/assets.dart';
-import '../../../../helper/UI_widgets/custom_button.dart';
-import '../controllers/about_you_instructor_controller.dart';
+import '../../../../helper/UI_widgets/custom_back_app_bar.dart';
+import '../controllers/about_you_student_controller.dart';
 
-class AboutYouInstructorView extends GetView<AboutYouInstructorController> {
-  const AboutYouInstructorView({super.key});
+class AboutYouStudentView extends GetView<AboutYouStudentController> {
+  const AboutYouStudentView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,14 +35,15 @@ class AboutYouInstructorView extends GetView<AboutYouInstructorController> {
                     ),
                   ),
                   Text(
-                    "Enter your details so we can create your account.",
+                    "Enter your personal details\nbelow.",
                     textAlign: TextAlign.center,
                     style: context.textTheme.bodyLarge?.copyWith(
                       fontSize: 22.0,
                       fontWeight: FontWeight.w500,
                       color: Colors.grey.shade800,
                     ),
-                  ),
+                  ).paddingHorizontal(25.0),
+                  CustomTextFieldTitle(controller: controller.nameController),
                 ],
               ),
             ),
